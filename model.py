@@ -29,7 +29,8 @@ def plot_predictions(train_data=X_train, train_labels=y_train, test_data=X_test,
   plt.scatter(test_data, test_labels, c="g", s=4, label="Testing Data")
   if predictions is not None:
     plt.scatter(test_data, predictions, c="r", s=4, label="Predictions")
-  plt.legend(prop={"size": 14});
+  plt.legend(prop={"size": 14})
+  plt.show()
 
 torch.manual_seed(42)
 model_0 = LinearRegressionModel()
@@ -37,7 +38,7 @@ model_0 = LinearRegressionModel()
 loss_fn = nn.L1Loss()
 optimizer = torch.optim.SGD(params=model_0.parameters(), lr=0.01)
 
-epochs = 100
+epochs = 250
 
 train_loss_values = []
 test_loss_values = []
